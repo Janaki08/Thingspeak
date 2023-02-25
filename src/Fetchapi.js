@@ -5,7 +5,7 @@ import './App.css';
 const FetchAPI = () => {
   const [result, setresult] = useState(null);
   const [simulatorstatus, setsimulatorstatus] = useState(null);
-  ;
+  
 
   const BatteryOn = async () => {
     document.getElementsByClassName('yt-loader')[0].style.display = "block";
@@ -62,11 +62,11 @@ const FetchAPI = () => {
   const SimulatorOn = () => {
     document.getElementsByClassName('yt-loader')[0].style.display = "block";
 
-    fetch("https://api.thingspeak.com/update?api_key=FVXMUNKFSR3PRVRT&field1=1").then(res => {
+    fetch("https://api.thingspeak.com/update?api_key=FVXMUNKFSR3PRVRT&field2=1").then(res => {
       setTimeout(() => {
         document.getElementsByClassName('yt-loader')[0].style.display = "none";
 
-        fetch(`https://api.thingspeak.com/channels/1985134/fields/2.json?results=2`)
+        fetch(`https://api.thingspeak.com/channels/1985134/fields/2.json?results=1`)
           .then((response) => response.json())
           .then((jsdata) => {
             console.log("data", jsdata.feeds[0]);
@@ -89,7 +89,7 @@ const FetchAPI = () => {
     document.getElementsByClassName('yt-loader')[0].style.display = "block";
 
 
-    fetch("https://api.thingspeak.com/update?api_key=FVXMUNKFSR3PRVRT&field1=0").then(res => {
+    fetch("https://api.thingspeak.com/update?api_key=FVXMUNKFSR3PRVRT&field2=0").then(res => {
       setTimeout(() => {
         setsimulatorstatus("off")
 
@@ -98,7 +98,7 @@ const FetchAPI = () => {
           .then((response) => response.json())
           .then((jsdata) => {
             console.log("data", jsdata.feeds[0].field2);
-            if (jsdata.feeds[0].field2 == 1) {
+            if (jsdata.feeds[0].field2 == 0) {
               setsimulatorstatus("off")
               setTimeout(() => {
                 alert('Simulatoroff')
