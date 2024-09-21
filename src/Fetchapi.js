@@ -10,7 +10,7 @@ const FetchAPI = () => {
   const BatteryOn = async () => {
     document.getElementsByClassName('yt-loader')[0].style.display = "block";
     console.log("BatteryON")
-
+     console.log("changes again")
 
 
     await fetch(`https://api.thingspeak.com/update?api_key=FVXMUNKFSR3PRVRT&field2=1`).then(res => {
