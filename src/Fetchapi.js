@@ -62,7 +62,7 @@ const FetchAPI = () => {
 
   const SimulatorOn = () => {
     document.getElementsByClassName('yt-loader')[0].style.display = "block";
-    console.log("changes222")
+
     fetch("https://api.thingspeak.com/update?api_key=FVXMUNKFSR3PRVRT&field2=1").then(res => {
       setTimeout(() => {
         document.getElementsByClassName('yt-loader')[0].style.display = "none";
