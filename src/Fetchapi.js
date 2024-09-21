@@ -9,6 +9,7 @@ const FetchAPI = () => {
 
   const BatteryOn = async () => {
     document.getElementsByClassName('yt-loader')[0].style.display = "block";
+    console.log("BatteryON")
 
 
 
